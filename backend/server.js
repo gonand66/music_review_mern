@@ -1,11 +1,12 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const Albums = require("./schema")
-// import bodyParser from "body-parser"
 
 const dbUrl="mongodb+srv://mern123:mern123@cluster0.j6fsj.mongodb.net/music?retryWrites=true&w=majority"
 
 const app = express()
+const PORT = process.env.PORT || 5000;
+// midlewares
 app.use(express.urlencoded({extended: false}))
 app.use(express.json({extended: false}))
 
@@ -70,11 +71,20 @@ app.put('/api/albums/:id', async (req, res) => {
         const id = req.params.id;
         const data = req.body
         const album = await Albums.findByIdAndUpdate(id, { $set : data })
-        res.json({message : "Uodate Successfully"})
+        res.json({message : "Update Successfully"})
     } catch (error) {
         res.send({error})
     }
   })
 
-const PORT = process.env.PORT || 5000;
+  app.delete('/api/albums/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const album = await Albums.findByIdAndDelete(id)
+        res.json({message : "Delete Successfully"})
+    } catch (error) {
+        res.send({error})
+    }
+  })
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
