@@ -1,0 +1,122 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+nav{
+  background-color: #f8ed57;
+  /* background: linear-gradient(to right, #f09819, #edde5d); */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav h3 {
+  display: inline;
+  margin-right : 1rem;
+}
+nav h1:hover,nav h3:hover{
+  color: white;
+  cursor: pointer;
+}
+.logo{
+  text-decoration: none;
+  color: #1d1c1c;
+  
+}
+.albums{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.album{
+  list-style-type: none;
+  border: 1px solid lightgray ;
+  border-radius: 1rem;
+  margin: 2rem;
+  box-shadow: 0 0.05rem gray;
+}
+.album-img {
+  height: 20rem;
+  width: 20rem;
+  max-width: 350px;
+  max-height: 350px;
+}
+.album-details{
+  font-size: 1rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.album-details h2,.album-details h3{
+  margin-bottom: 0.5rem;
+  color: #1d1c1c;
+}
+.album-details h2:hover{
+  cursor: pointer;
+  color: #F27405;
+}
+.album-details .rating{
+  align-self: flex-end;
+}
+
+/* Album Screen */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.content img, .detail{
+  width: 25rem;
+  height: 25rem;
+  max-width: 400px;
+  max-height:400px;
+  margin: 3rem auto;
+  border-radius: 1rem;
+}
+.detail{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  border: 0.5rem solid  #f8ed57;
+}
+.detail h2, .detail h3 {
+  margin: 0.5rem;
+}
+.review-box{
+  align-self: center;
+  display: flex;
+  align-items: center ;
+  margin: auto auto 1rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #f0e98f;
+}
+.detail-rating{
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Ad Screnn */
+.add{
+  display: flex;
+  justify-content:center ;
+}
+.add form{
+  display: flex;
+  margin-top: 4rem;
+  border: 2px solid #645e05 ;
+  border-radius: 1rem;
+  background: #f8ed57;
+  padding: 2rem;
+  flex-direction: column;
+  color: #1d1c1c;
+}
+.add .input{
+  margin: 1rem;
+  background: rgb(245, 245, 242) ;
+}
+
