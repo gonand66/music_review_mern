@@ -6,17 +6,19 @@ import { Box, Button } from "@material-ui/core";
 export default function AlbumScreen(props) {
   const [album, setAlbum] = useState({});
   const [value, setValue] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const getAlbum = async () => {
     console.log(props.match.params.id);
-    const res = await Axios.get("/api/albums/" + props.match.params.id);
+    const res = await Axios.get("https://fierce-crag-02055.herokuapp.com"+"/api/albums/" + props.match.params.id);
     console.log(res.data[0]);
     setAlbum(res.data[0]);
+    setLoading(false)
   };
- 
   useEffect(() => {
     getAlbum();   
-  },[]);
+  }, []);
+
 
   const review = async(e)=>{
 
@@ -24,7 +26,7 @@ export default function AlbumScreen(props) {
         total_rating : album.total_rating + value ,
         amount_review : album.amount_review + 1
       });
-      const res = await Axios.put("/api/albums/" + props.match.params.id, body, {
+      const res = await Axios.put("https://fierce-crag-02055.herokuapp.com"+"/api/albums/" + props.match.params.id, body, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -35,8 +37,7 @@ export default function AlbumScreen(props) {
   }
 
   return (
-      
-    
+    (loading) ? <div>Loading...</div> : 
     <div className="content">
       <img src={album.image} alt={album.name} />
       <div className="detail">

@@ -6,11 +6,13 @@ import Rating from "@material-ui/lab/Rating";
 
 export default function HomeScreen(props) {
   const [albums, setAlbums] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getAlbums = async () => {
-    const res = await Axios.get("/api/albums");
+    const res = await Axios.get("https://fierce-crag-02055.herokuapp.com"+"/api/albums");
     console.log(res.data.albums);
     setAlbums(res.data.albums);
+    setLoading(false)
   };
 
   useEffect(() => {
@@ -18,6 +20,7 @@ export default function HomeScreen(props) {
   }, []);
 
   return (
+    (loading) ? <div>Loading...</div> : 
     <div>
       <ul className="albums">
         {albums.map((album) => (
