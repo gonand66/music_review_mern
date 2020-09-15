@@ -21,7 +21,7 @@ export default function HomeScreen(props) {
 
   return (
     (loading) ? <div>Loading...</div> : 
-    <div>
+    <div >
       <ul className="albums">
         {albums.map((album) => (
           <li key={album.name} className="album">

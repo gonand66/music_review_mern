@@ -22,7 +22,7 @@ export default function AddScreen() {
     const res = await Axios.post("https://fierce-crag-02055.herokuapp.com"+"/api/add", body, {
       headers: {
         "Content-Type": "application/json",
-      },
+      }
     });
     console.log(res);
     setImage("")

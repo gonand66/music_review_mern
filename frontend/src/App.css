@@ -1,11 +1,11 @@
 *{
   margin: 0;
   box-sizing: border-box;
+  padding: 0;
   font-family: 'Roboto', sans-serif;
 }
 nav{
   background-color: #f8ed57;
-  /* background: linear-gradient(to right, #f09819, #edde5d); */
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -22,13 +22,11 @@ nav h1:hover,nav h3:hover{
 .logo{
   text-decoration: none;
   color: #1d1c1c;
-  
 }
 .albums{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   margin-top: 2rem;
 }
 .album{
@@ -40,7 +38,6 @@ nav h1:hover,nav h3:hover{
 }
 .album-img {
   height: 20rem;
-  width: 20rem;
   max-width: 350px;
   max-height: 350px;
 }
@@ -68,12 +65,14 @@ nav h1:hover,nav h3:hover{
   flex-wrap: wrap;
   justify-content: center;
 }
-.content img, .detail{
+.content-img, .detail{
   width: 25rem;
-  height: 25rem;
   max-width: 400px;
   max-height:400px;
   margin: 3rem auto;
+}
+.content-img img{
+  width: 100%;
   border-radius: 1rem;
 }
 .detail{
@@ -81,6 +80,7 @@ nav h1:hover,nav h3:hover{
   flex-direction: column;
   padding: 2rem 1rem;
   border: 0.5rem solid  #f8ed57;
+  border-radius: 1rem;
 }
 .detail h2, .detail h3 {
   margin: 0.5rem;

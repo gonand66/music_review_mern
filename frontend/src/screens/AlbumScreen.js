@@ -39,7 +39,8 @@ export default function AlbumScreen(props) {
   return (
     (loading) ? <div>Loading...</div> : 
     <div className="content">
-      <img src={album.image} alt={album.name} />
+      <div className="content-img"><img src={album.image} alt={album.name} /></div>
+      
       <div className="detail">
         <h2>Album : {album.name}</h2>
         <div className="detail-rating">
