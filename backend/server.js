@@ -4,7 +4,7 @@ const Albums = require("./schema");
 const cors = require("cors")
 
 const dbUrl =
-  "mongodb+srv://mern123:mern123@cluster0.j6fsj.mongodb.net/music?retryWrites=true&w=majority";
+  "xxxxxxxxxxxx";
 
 const PORT = process.env.PORT || 7000;
 const app = express();
